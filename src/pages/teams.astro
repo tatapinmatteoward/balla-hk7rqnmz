@@ -1,0 +1,226 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Teams";
+const pageDescription = "Explore the legendary basketball teams that echo through the courts of history, with warm insights from Ballard Beat.";
+
+const dynasties = [
+  {
+    name: "Boston Celtics",
+    description: "The gold standard of excellence. With 17 championships, their legacy is a symphony of green, led by legends like Bill Russell and Larry Bird. Feel the chill of the Garden as we revisit their unbreakable spirit.",
+    color: "#166534"
+  },
+  {
+    name: "Los Angeles Lakers",
+    description: "Showtime glamour meets relentless pursuit. From Magic Johnson's flashy passes to Kobe Bryant's relentless drives, the Lakers bring both style and substance to the hardwood.",
+    color: "#7e22ce"
+  },
+  {
+    name: "Chicago Bulls",
+    description: "The dynasty that redefined greatness. Michael Jordan's soared above the rest, leading his team to six championships and creating a legend that still echoes today.",
+    color: "#059669"
+  },
+  {
+    name: "Golden State Warriors",
+    description: "The revolution that changed the game forever. With Stephen Curry's three-point shooting and innovative gameplay, they've redefined what it means to be a modern champion.",
+    color: "#9d174d"
+  }
+];
+
+const legendaryPlayers = [
+  {
+    name: "Michael Jordan",
+    team: "Chicago Bulls",
+    era: "1980s-1990s"
+  },
+  {
+    name: "LeBron James",
+    team: "Cleveland Cavaliers / Los Angeles Lakers",
+    era: "2000s-Present"
+  },
+  {
+    name: "Kareem Abdul-Jabbar",
+    team: "Milwaukee Bucks / Los Angeles Lakers",
+    era: "1960s-1980s"
+  },
+  {
+    name: "Magic Johnson",
+    team: "Los Angeles Lakers",
+    era: "1980s"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <style>
+  {'
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+      
+      .vintage-text {
+        font-family: 'Playfair Display', serif;
+        letter-spacing: 1px;
+      }
+      
+      .vintage-card {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .vintage-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+      }
+      
+      .vintage-border {
+        border: 2px solid #166534;
+      }
+      
+      .accent-bg {
+        background-color: #7e22ce;
+      }
+      
+      .primary-bg {
+        background-color: #166534;
+      }
+      
+      .card-gradient {
+        background: linear-gradient(135deg, rgba(22, 101, 52, 0.1) 0%, rgba(126, 34, 206, 0.1) 100%);
+      }
+    '}
+</style>
+
+  <!-- Hero Section -->
+  <div class="relative py-20 bg-gradient-to-br from-[#fef3c7] via-[#fde68a] to-[#fcd34d]">
+    <div class="absolute inset-0 opacity-10">
+      <div class="w-full h-full" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(22, 101, 52, 0.05) 10px, rgba(22, 101, 52, 0.05) 20px);"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl font-bold vintage-text text-[#166534] mb-6">
+          Timeless Teams
+        </h1>
+        <p class="text-xl md:text-2xl text-[#7e22ce] vintage-text mb-8">
+          Echoes from the Court: Timeless Basketball Insights
+        </p>
+        <div class="w-24 h-1 bg-[#166534] mx-auto mb-8"></div>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+          Welcome to the heart of Ballard Beat, where we cozy up to the fireside tales of basketball's greatest squads. 
+          In this vintage corner of the web, we celebrate the teams that have woven their stories into the fabric of the game.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynasty Cards Section -->
+  <section class="py-20 bg-[#fffbeb]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold vintage-text text-[#166534] mb-4">Iconic NBA Dynasties</h2>
+        <p class="text-lg text-[#7e22ce] max-w-2xl mx-auto">
+          These squads aren't just teams—they're eras defined by unforgettable moments
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {dynasties.map((dynasty, index) => (
+          <div class="vintage-card bg-white rounded-xl overflow-hidden card-gradient transform hover:scale-105 transition-transform duration-300">
+            <div class="h-4" style="background-color: {dynasty.color}"></div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold vintage-text text-[#166534] mb-3">{dynasty.name}</h3>
+              <p class="text-gray-700 leading-relaxed">{dynasty.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Players Section -->
+  <section class="py-20 bg-gradient-to-b from-[#fef3c7] to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold vintage-text text-[#166534] mb-4">Legendary Legends</h2>
+        <p class="text-lg text-[#7e22ce] max-w-2xl mx-auto">
+          The players who defined greatness on the court
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {legendaryPlayers.map((player) => (
+          <div class="vintage-card bg-white rounded-xl p-6 text-center shadow-lg">
+            <div class="w-24 h-24 rounded-full bg-[#fde68a] flex items-center justify-center mx-auto mb-4 border-4 border-[#166534]">
+              <span class="text-3xl font-bold text-[#166534]">{player.name.charAt(0)}</span>
+            </div>
+            <h3 class="text-xl font-bold vintage-text text-[#166534] mb-2">{player.name}</h3>
+            <p class="text-[#7e22ce] font-medium mb-1">{player.team}</p>
+            <p class="text-gray-600 text-sm">{player.era}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="py-20 bg-[#166534] text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="text-6xl mb-6">❝</div>
+        <blockquote class="text-2xl md:text-3xl italic vintage-text mb-8 leading-relaxed">
+          "In basketball, as in life, the most important victories come not from the number of games won, 
+          but from the character built and the memories forged on the court."
+        </blockquote>
+        <cite class="text-xl block">— Ballard Beat Editorial Team</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legacy Section -->
+  <section class="py-20 bg-[#fffbeb]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <div class="md:w-1/2">
+            <h2 class="text-4xl font-bold vintage-text text-[#166534] mb-6">Legacy & Impact</h2>
+            <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+              Each team carries echoes of passion, grit, and glory that transcend championships. 
+              They shape the culture of basketball, creating traditions that live long after their last game.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Through decades of competition, these teams have become more than sports organizations—they've 
+              become symbols of perseverance, excellence, and the human spirit's endless capacity for greatness.
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <div class="bg-[#fde68a] rounded-xl p-8 border-4 border-[#7e22ce] relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-32 h-32 bg-[#166534] rounded-full opacity-10 -translate-x-16 -translate-y-16"></div>
+              <div class="absolute bottom-0 right-0 w-40 h-40 bg-[#7e22ce] rounded-full opacity-10 translate-x-20 translate-y-20"></div>
+              <div class="relative z-10">
+                <h3 class="text-3xl font-bold vintage-text text-[#166534] mb-4">The Court's Memory</h3>
+                <p class="text-gray-700 mb-4">
+                  Every championship banner tells a story of dedication and triumph.
+                </p>
+                <p class="text-gray-700">
+                  Every playoff series is a testament to the enduring power of teamwork.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Call to Action -->
+  <section class="py-20 bg-gradient-to-r from-[#166534] to-[#7e22ce] text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold vintage-text mb-6">Continue Your Journey</h2>
+      <p class="text-xl max-w-2xl mx-auto mb-10">
+        Explore more legends, stories, and insights from the golden eras of basketball
+      </p>
+      <button class="bg-white text-[#166534] font-bold py-4 px-8 rounded-full text-lg hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105">
+        Dive Deeper Into History
+      </button>
+    </div>
+  </section>
+</Layout>

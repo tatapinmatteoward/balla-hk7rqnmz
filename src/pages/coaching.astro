@@ -1,0 +1,239 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Coaching Wisdom: Timeless Strategies from the Court";
+const pageDescription = "Discover enduring basketball coaching insights at Ballard Beat. From foundational drills to team-building philosophies, our cozy vintage corner offers practical advice to elevate your game and guide the next generation of players.";
+
+const features = [
+  { 
+    icon: 'fas fa-hand-holding-heart', 
+    title: 'Character Building', 
+    text: 'Developing strong players means building strong people. Focus on integrity, resilience, and leadership through every drill.' 
+  },
+  { 
+    icon: 'fas fa-users', 
+    title: 'Team Unity', 
+    text: 'Create a culture where every player feels valued. Build trust and communication that transcends the court.' 
+  },
+  { 
+    icon: 'fas fa-bullseye', 
+    title: 'Foundational Skills', 
+    text: 'Master the fundamentals—footwork, ball handling, shooting—that create a powerful foundation for all play.' 
+  }
+];
+
+const coachingPrinciples = [
+  {
+    title: "Foster Fundamentals",
+    description: "Drill the basics relentlessly. Footwork, dribbling, and shooting form are the bricks of any championship foundation—polish them until they shine."
+  },
+  {
+    title: "Build Trust & Respect",
+    description: "A successful team is built on mutual respect. Create an environment where everyone feels safe to take risks and grow."
+  },
+  {
+    title: "Embrace Mistakes as Learning",
+    description: "Mistakes are opportunities. Teach players to analyze errors constructively and emerge stronger each time."
+  },
+  {
+    title: "Lead by Example",
+    description: "Your actions speak louder than words. Demonstrate the work ethic, determination, and passion you expect from your players."
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <style>
+  {'
+      .vintage-border {
+        border: 4px solid #7e22ce;
+        box-shadow: 0 0 0 4px #166534, 0 0 0 8px #7e22ce;
+      }
+      
+      .serif-font {
+        font-family: 'Georgia', serif;
+      }
+      
+      .gold-text {
+        color: #d97706;
+      }
+      
+      .vintage-card {
+        background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+        border: 2px solid #a8a29e;
+        box-shadow: 4px 4px 0 rgba(106, 17, 203, 0.2);
+      }
+      
+      .coaching-section {
+        background: linear-gradient(to bottom, #fef3c7, #fde68a);
+        border-top: 8px solid #7e22ce;
+        border-bottom: 8px solid #7e22ce;
+      }
+      
+      .principle-card {
+        transition: all 0.3s ease;
+        transform: translateY(0);
+      }
+      
+      .principle-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(126, 34, 206, 0.2);
+      }
+      
+      .hero-pattern {
+        background: 
+          radial-gradient(circle at 10% 20%, rgba(22, 101, 52, 0.1) 0%, transparent 20%),
+          radial-gradient(circle at 90% 80%, rgba(126, 34, 206, 0.1) 0%, transparent 20%);
+      }
+    '}
+</style>
+
+  <!-- Hero Section -->
+  <header class="hero-pattern py-20 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0ibm9uZSIvPgo8Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSI1IiBmaWxsPSIjMTY2NTM0IiBvcGFjaXR5PSIwLjEiLz4KPC9zdmc+')]"></div>
+    </div>
+    
+    <div class="max-w-6xl mx-auto relative z-10 text-center">
+      <div class="inline-block bg-white px-6 py-2 mb-6 rounded-full border-2 border-dashed border-gray-300">
+        <span class="text-sm font-semibold gold-text tracking-wider">ECHOES FROM THE COURT</span>
+      </div>
+      
+      <h1 class="text-4xl md:text-6xl font-bold serif-font text-gray-900 mb-6 leading-tight">
+        Coaching Wisdom: <br />
+        <span class="text-primary">Timeless Strategies</span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-700 serif-font leading-relaxed">
+        Discover enduring basketball coaching insights at Ballard Beat. From foundational drills to team-building philosophies, our cozy vintage corner offers practical advice to elevate your game and guide the next generation of players.
+      </p>
+      
+      <div class="mt-10 flex justify-center">
+        <div class="flex space-x-4">
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+            <i class="fas fa-basketball-ball text-white text-2xl"></i>
+          </div>
+          <div class="w-16 h-16 rounded-full bg-accent flex items-center justify-center">
+            <i class="fas fa-chess-board text-white text-2xl"></i>
+          </div>
+          <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+            <i class="fas fa-user-friends text-white text-2xl"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Welcome Section -->
+  <section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-start">
+        <div class="mr-8 flex-shrink-0">
+          <div class="w-24 h-24 bg-accent rounded-full flex items-center justify-center">
+            <i class="fas fa-book-open text-white text-4xl"></i>
+          </div>
+        </div>
+        
+        <div>
+          <h2 class="text-3xl font-bold serif-font text-gray-900 mb-4">Welcome to the Coaching Corner</h2>
+          
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            Nestled in the warm glow of basketball's rich history, <em>Ballard Beat</em> invites you to our Coaching Corner—a timeless haven for mentors, players, and enthusiasts alike. Here, we echo the echoes from legendary courts, sharing vintage-inspired wisdom that transcends eras. Whether you're a seasoned coach or just starting your journey, these insights aim to inspire, educate, and unite.
+          </p>
+          
+          <div class="vintage-border p-6 bg-yellow-50 rounded-lg mt-8">
+            <h3 class="text-xl font-bold serif-font text-gray-900 mb-3">The Heart of Great Coaching</h3>
+            <p class="text-gray-700 leading-relaxed">
+              At its core, coaching is about more than plays and scores; it's about building character on and off the court. In the spirit of the game's golden age, embrace these foundational principles:
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 px-4 coaching-section">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold serif-font text-gray-900 mb-4">Essential Coaching Pillars</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div class="vintage-card p-8 rounded-lg text-center hover:shadow-xl transition-all duration-300">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class={`${feature.icon} text-white text-2xl`}></i>
+            </div>
+            <h3 class="text-xl font-bold serif-font text-gray-900 mb-3">{feature.title}</h3>
+            <p class="text-gray-700">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles Section -->
+  <section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold serif-font text-gray-900 mb-4">Core Coaching Principles</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        {coachingPrinciples.map((principle, index) => (
+          <div 
+            class="principle-card vintage-card p-8 rounded-lg border-l-4 border-primary hover:border-accent transition-all duration-300"
+            key={index}
+          >
+            <h3 class="text-xl font-bold serif-font text-gray-900 mb-4">{principle.title}</h3>
+            <p class="text-gray-700 leading-relaxed">{principle.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="py-16 px-4 bg-gradient-to-r from-primary to-accent">
+    <div class="max-w-4xl mx-auto text-center">
+      <blockquote class="text-2xl md:text-3xl italic serif-font text-white mb-8">
+        "Basketball is a team sport. It's about bringing people together. The most important thing a coach can teach is character."
+      </blockquote>
+      <p class="text-xl text-yellow-100">— Legendary Coach John Smith</p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-16 px-4 bg-yellow-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold serif-font text-gray-900 mb-6">Ready to Elevate Your Coaching?</h2>
+      <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+        Join our community of coaches who believe in time-tested principles and build lasting relationships with their players.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="px-8 py-4 bg-primary text-white font-bold rounded-lg hover:bg-accent transition-colors duration-300 transform hover:scale-105">
+          Download Coaching Guide
+        </button>
+        <button class="px-8 py-4 bg-white text-primary border-2 border-primary font-bold rounded-lg hover:bg-accent hover:text-white transition-colors duration-300">
+          Join Our Community
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-4 bg-gray-900 text-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-2xl font-bold serif-font mb-4">Ballard Beat</h3>
+      <p class="text-gray-400 mb-6">Echoes from the Court: Timeless Basketball Insights</p>
+      <p class="text-gray-500 text-sm">
+        © {new Date().getFullYear()} Ballard Beat. All rights reserved. 
+        Celebrating the rich tradition of basketball coaching.
+      </p>
+    </div>
+  </footer>
+</Layout>

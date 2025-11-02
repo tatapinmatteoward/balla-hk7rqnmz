@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Recruits – Join the Rim Reels Squad!";
+const pageDescription = "Calling all basketball enthusiasts! Become a key player on the Rim Reels team by contributing your passion for epic moments, insights, and stories that keep fans on the edge of their seats.";
+
+const features = [
+  {
+    icon: "fas fa-dumbbell",
+    title: "Play Your Part",
+    text: "Contribute articles, videos, or timelines that capture the thrill of basketball."
+  },
+  {
+    icon: "fas fa-briefcase",
+    title: "Build Your Portfolio",
+    text: "Gain exposure on a growing platform loved by hoops heads worldwide."
+  },
+  {
+    icon: "fas fa-gamepad",
+    title: "Fun & Flexible",
+    text: "Work remotely, set your own pace, and enjoy the game."
+  }
+];
+
+const benefits = [
+  {
+    title: "Epic Storytelling",
+    description: "Transform your basketball memories into compelling narratives that captivate audiences."
+  },
+  {
+    title: "Community Connection",
+    description: "Join a tribe of passionate fans who share your love for the game."
+  },
+  {
+    title: "Skill Development",
+    description: "Hone your writing, video editing, and storytelling abilities in a supportive environment."
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <style>
+  {'
+      .hero-gradient {
+        background: linear-gradient(135deg, #0ea5e9 0%, #f97316 100%);
+      }
+      
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #f97316;
+        box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.3);
+      }
+      
+      .timeline-line {
+        position: absolute;
+        left: 6px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #0ea5e9;
+      }
+      
+      .feature-card {
+        transition: all 0.3s ease;
+        transform: translateY(0);
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      
+      .animated-text {
+        animation: fadeInUp 1s ease forwards;
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+      }
+    '}
+</style>
+
+  <!-- Hero Section -->
+  <div class="hero-gradient py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-64 h-64 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+      <div class="absolute top-20 right-10 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-10 left-1/2 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animated-text">
+          Recruits
+        </h1>
+        <div class="text-2xl md:text-3xl text-white font-bold mb-8 animated-text animation-delay-300">
+          Join the Rim Reels Squad!
+        </div>
+        <p class="text-xl text-white max-w-2xl mx-auto animated-text animation-delay-500">
+          Calling all basketball enthusiasts! Become a key player on the Rim Reels team by contributing your passion for epic moments, insights, and stories that keep fans on the edge of their seats.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mission Statement -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-6">Ready to Dunk with the Best?</h2>
+        <div class="flex justify-center mb-8">
+          <div class="w-24 h-1 bg-primary rounded-full"></div>
+        </div>
+        <p class="text-xl text-gray-700 leading-relaxed">
+          At <span class="font-bold text-primary">Rim Reels</span>, we're all about <span class="font-bold text-accent">dunking into epic basketball moments and insights</span>. Our vibrant, playful sports timeline is powered by a squad of dedicated fans, writers, and creators who live and breathe the game. If you're passionate about hoops—from legendary slams to underdog triumphs—we want you on our team!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">Why Join the Rim Reels Squad?</h2>
+        <div class="w-24 h-1 bg-primary mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div class="feature-card bg-white p-8 rounded-xl shadow-lg text-center relative">
+            <div class="text-5xl text-primary mb-6">
+              <i class={feature.icon}></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">{feature.title}</h3>
+            <p class="text-gray-600">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="py-20 bg-gradient-to-br from-primary to-accent">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">Our Playbook</h2>
+        <p class="text-xl text-white max-w-2xl mx-auto">
+          The path to becoming a Rim Reels contributor is filled with opportunities to grow, create, and connect
+        </p>
+      </div>
+
+      <div class="relative max-w-4xl mx-auto">
+        <div class="timeline-line"></div>
+        
+        <div class="space-y-12">
+          <div class="relative pl-16">
+            <div class="timeline-item"></div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Apply & Share Your Passion</h3>
+              <p class="text-gray-600">Submit your application highlighting your basketball knowledge, creativity, and commitment to the community.</p>
+            </div>
+          </div>
+          
+          <div class="relative pl-16">
+            <div class="timeline-item"></div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Get Matched with Your Role</h3>
+              <p class="text-gray-600">We'll find the perfect fit for your skills within our diverse team of creators and contributors.</p>
+            </div>
+          </div>
+          
+          <div class="relative pl-16">
+            <div class="timeline-item"></div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Start Creating Content</h3>
+              <p class="text-gray-600">Begin crafting your unique basketball narratives, timelines, and insights that inspire others.</p>
+            </div>
+          </div>
+          
+          <div class="relative pl-16">
+            <div class="timeline-item"></div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Grow with the Community</h3>
+              <p class="text-gray-600">Celebrate victories, learn from setbacks, and build lasting relationships with fellow hoopsheads.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">What You'll Gain</h2>
+        <div class="w-24 h-1 bg-primary mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {benefits.map((benefit, index) => (
+          <div class="bg-white p-8 rounded-xl shadow-lg text-center transform transition duration-500 hover:scale-105">
+            <div class="text-4xl text-primary mb-6">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">{benefit.title}</h3>
+            <p class="text-gray-600">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-primary to-accent text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-6">Are You Ready to Join the Rim Reels Team?</h2>
+      <p class="text-xl max-w-2xl mx-auto mb-10">
+        Become part of a community that celebrates basketball culture in all its forms
+      </p>
+      <button class="bg-white text-primary hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-xl pulse transition-all duration-300 transform hover:scale-105">
+        Apply Now to Get Started
+      </button>
+    </div>
+  </section>
+</Layout>
